@@ -1,3 +1,4 @@
+import 'dart:ffi';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
@@ -49,7 +50,63 @@ class HomePage extends StatelessWidget {
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(children: [
-                  cardUpcomingBills(),
+                  cardUpcomingBills(
+                      bigBoxClr: Color(0xff3A0F55),
+                      smallBoxClr: Color(0xff9871B7)),
+                  SizedBox(
+                    width: 18,
+                  ),
+                  cardUpcomingBills(
+                      bigBoxClr: Color(0xffF98B4D),
+                      smallBoxClr: Color(0xffF3A257)),
+                  SizedBox(
+                    width: 18,
+                  ),
+                  cardUpcomingBills(
+                      bigBoxClr: Color(0xff3A0F55),
+                      smallBoxClr: Color(0xff9871B7)),
+                  SizedBox(
+                    width: 18,
+                  ),
+                  cardUpcomingBills(
+                      bigBoxClr: Color(0xffF98B4D),
+                      smallBoxClr: Color(0xffF3A257)),
+                  SizedBox(
+                    width: 18,
+                  ),
+                  cardUpcomingBills(
+                      bigBoxClr: Color(0xff3A0F55),
+                      smallBoxClr: Color(0xff9871B7)),
+                  SizedBox(
+                    width: 18,
+                  ),
+                  cardUpcomingBills(
+                      bigBoxClr: Color(0xffF98B4D),
+                      smallBoxClr: Color(0xffF3A257)),
+                  SizedBox(
+                    width: 18,
+                  ),
+                  cardUpcomingBills(
+                      bigBoxClr: Color(0xff3A0F55),
+                      smallBoxClr: Color(0xff9871B7)),
+                  SizedBox(
+                    width: 18,
+                  ),
+                  cardUpcomingBills(
+                      bigBoxClr: Color(0xffF98B4D),
+                      smallBoxClr: Color(0xffF3A257)),
+                  SizedBox(
+                    width: 18,
+                  ),
+                  cardUpcomingBills(
+                      bigBoxClr: Color(0xff3A0F55),
+                      smallBoxClr: Color(0xff9871B7)),
+                  SizedBox(
+                    width: 18,
+                  ),
+                  cardUpcomingBills(
+                      bigBoxClr: Color(0xffF98B4D),
+                      smallBoxClr: Color(0xffF3A257)),
                 ]),
               ),
             ],
@@ -59,11 +116,13 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Container cardUpcomingBills() => Container(
+  Container cardUpcomingBills(
+          {required Color bigBoxClr, required Color smallBoxClr}) =>
+      Container(
         height: 180,
         width: 240,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(30), color: Color(0xff3A0F55)),
+            borderRadius: BorderRadius.circular(30), color: bigBoxClr),
         child: Column(children: [
           Expanded(
               flex: 5,
@@ -82,7 +141,7 @@ class HomePage extends StatelessWidget {
                 width: 210,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(16),
-                    color: Color(0xff9871B7)),
+                    color: smallBoxClr),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
