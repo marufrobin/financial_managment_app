@@ -1,9 +1,6 @@
-import 'dart:ffi';
-import 'dart:ui';
-
+import 'package:financial_managment_app/Screen/model.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatelessWidget {
@@ -13,103 +10,115 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Padding(
-          padding: EdgeInsets.fromLTRB(25, 30, 25, 25),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              customAppBar(),
-              SizedBox(
-                height: 30,
-              ),
-              Container(
-                width: 370,
-                height: 58,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Color(0xffF4EFEF)),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    menuBar(isSelected: true, menuName: "Week"),
-                    menuBar(isSelected: false, menuName: "Month"),
-                    menuBar(isSelected: false, menuName: "Year")
-                  ],
+        body: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(25, 30, 25, 25),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                customAppBar(),
+                SizedBox(height: 30),
+                Container(
+                  width: 370,
+                  height: 58,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(16),
+                      color: Color(0xffF4EFEF)),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      menuBar(isSelected: true, menuName: "Week"),
+                      menuBar(isSelected: false, menuName: "Month"),
+                      menuBar(isSelected: false, menuName: "Year")
+                    ],
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 44,
-              ),
-              Text(
-                "Upcoming Transaction",
-                style: textStyle(size: 20, clr: Color(0xff5F5B5B)),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(children: [
-                  cardUpcomingBills(
-                      bigBoxClr: Color(0xff3A0F55),
-                      smallBoxClr: Color(0xff9871B7)),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  cardUpcomingBills(
-                      bigBoxClr: Color(0xffF98B4D),
-                      smallBoxClr: Color(0xffF3A257)),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  cardUpcomingBills(
-                      bigBoxClr: Color(0xff3A0F55),
-                      smallBoxClr: Color(0xff9871B7)),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  cardUpcomingBills(
-                      bigBoxClr: Color(0xffF98B4D),
-                      smallBoxClr: Color(0xffF3A257)),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  cardUpcomingBills(
-                      bigBoxClr: Color(0xff3A0F55),
-                      smallBoxClr: Color(0xff9871B7)),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  cardUpcomingBills(
-                      bigBoxClr: Color(0xffF98B4D),
-                      smallBoxClr: Color(0xffF3A257)),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  cardUpcomingBills(
-                      bigBoxClr: Color(0xff3A0F55),
-                      smallBoxClr: Color(0xff9871B7)),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  cardUpcomingBills(
-                      bigBoxClr: Color(0xffF98B4D),
-                      smallBoxClr: Color(0xffF3A257)),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  cardUpcomingBills(
-                      bigBoxClr: Color(0xff3A0F55),
-                      smallBoxClr: Color(0xff9871B7)),
-                  SizedBox(
-                    width: 18,
-                  ),
-                  cardUpcomingBills(
-                      bigBoxClr: Color(0xffF98B4D),
-                      smallBoxClr: Color(0xffF3A257)),
-                ]),
-              ),
-            ],
+                SizedBox(height: 44),
+                Text(
+                  "Upcoming Transaction",
+                  style: textStyle(size: 20, clr: Color(0xff5F5B5B)),
+                ),
+                SizedBox(height: 30),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(children: [
+                    cardUpcomingBills(
+                        bigBoxClr: Color(0xff3A0F55),
+                        smallBoxClr: Color(0xff9871B7)),
+                    SizedBox(width: 18),
+                    cardUpcomingBills(
+                        bigBoxClr: Color(0xffF98B4D),
+                        smallBoxClr: Color(0xffF3A257)),
+                    SizedBox(width: 18),
+                    cardUpcomingBills(
+                        bigBoxClr: Color(0xff3A0F55),
+                        smallBoxClr: Color(0xff9871B7)),
+                    SizedBox(width: 18),
+                    cardUpcomingBills(
+                        bigBoxClr: Color(0xffF98B4D),
+                        smallBoxClr: Color(0xffF3A257)),
+                    SizedBox(width: 18),
+                    cardUpcomingBills(
+                        bigBoxClr: Color(0xff3A0F55),
+                        smallBoxClr: Color(0xff9871B7)),
+                    SizedBox(width: 18),
+                    cardUpcomingBills(
+                        bigBoxClr: Color(0xffF98B4D),
+                        smallBoxClr: Color(0xffF3A257)),
+                    SizedBox(width: 18),
+                    cardUpcomingBills(
+                        bigBoxClr: Color(0xff3A0F55),
+                        smallBoxClr: Color(0xff9871B7)),
+                    SizedBox(width: 18),
+                    cardUpcomingBills(
+                        bigBoxClr: Color(0xffF98B4D),
+                        smallBoxClr: Color(0xffF3A257)),
+                    SizedBox(width: 18),
+                    cardUpcomingBills(
+                        bigBoxClr: Color(0xff3A0F55),
+                        smallBoxClr: Color(0xff9871B7)),
+                    SizedBox(width: 18),
+                    cardUpcomingBills(
+                        bigBoxClr: Color(0xffF98B4D),
+                        smallBoxClr: Color(0xffF3A257)),
+                  ]),
+                ),
+                SizedBox(height: 42),
+                Text(
+                  "Week Transaction",
+                  style: textStyle(size: 20, clr: Color(0xff5F5B5B)),
+                ),
+                SizedBox(height: 40),
+                ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: myList.length,
+                    itemBuilder: ((context, index) {
+                      return Container(
+                        margin: EdgeInsets.all(10),
+                        child: ListTile(
+                          title: Text(
+                            "${myList[index].title}",
+                            style: textStyle(size: 20, clr: Colors.black),
+                          ),
+                          subtitle: Text(
+                            "${myList[index].date}",
+                            style: textStyle(size: 16, clr: Color(0xff5F5B5B)),
+                          ),
+                          trailing: Text(
+                            myList[index].price! > 0
+                                ? "+${myList[index].price}"
+                                : "${myList[index].price}",
+                            style: textStyle(size: 16, clr: Color(0xff5F5B5B)),
+                          ),
+                          tileColor: myList[index].price! > 0
+                              ? Color(0xffC0F5BB)
+                              : Color(0xffF5BBBB),
+                        ),
+                      );
+                    }))
+              ],
+            ),
           ),
         ),
       ),
