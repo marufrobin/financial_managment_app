@@ -97,6 +97,26 @@ class HomePage extends StatelessWidget {
                       return Container(
                         margin: EdgeInsets.all(10),
                         child: ListTile(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(16)),
+                          leading: Container(
+                            height: 60,
+                            width: 70,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: myList[index].price! > 0
+                                    ? Color(0xff5DF06C)
+                                    : Color(0xffF06F5D)),
+                            child: myList[index].price! > 0
+                                ? Icon(
+                                    Icons.arrow_upward,
+                                    color: Color(0xff10C122),
+                                  )
+                                : Icon(
+                                    Icons.arrow_downward,
+                                    color: Color(0xffC11010),
+                                  ),
+                          ),
                           title: Text(
                             "${myList[index].title}",
                             style: textStyle(size: 20, clr: Colors.black),
