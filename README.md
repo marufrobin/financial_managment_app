@@ -1,4 +1,4 @@
-# financial_managment_app
+# Financial Management App
 
 A new Flutter project.
 
