@@ -1,7 +1,5 @@
 import 'package:financial_managment_app/Screen/model.dart';
-import 'package:flutter/material.dart';
-
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/material.dart';mport 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -91,6 +89,7 @@ class HomePage extends StatelessWidget {
                 ),
                 SizedBox(height: 40),
                 ListView.builder(
+                    physics: NeverScrollableScrollPhysics(),
                     shrinkWrap: true,
                     itemCount: myList.length,
                     itemBuilder: ((context, index) {
