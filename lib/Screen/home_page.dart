@@ -1,5 +1,6 @@
 import 'package:financial_managment_app/Screen/model.dart';
-import 'package:flutter/material.dart';mport 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
